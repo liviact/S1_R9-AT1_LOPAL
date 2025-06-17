@@ -52,14 +52,30 @@ do {
         }
         
     } while (endereco == '');
+    
+    //repetir até conseguir o valor da variável valorKm correto
+    do {
+        valorKm = promptSync(`Insira o valor da entrega em reais:`);
+        
+        //verificação da variável nome
+        if (isNaN(valorKm)) {
+            console.log(`ERRO`);
+        
+        } else {
+            valoresKm[i] = valorKm;
+            conteudo += "R$"+valorKm[i]+" - ";
+        }
+            
+    } while (isNaN(valorKm));
 
     parar = promptSync(`Caso deseje continuar digite "sim" ou "s"!`);
     i++;
-
+    
 } while (parar == "sim" || parar == "s");
 
 for (let  i= 0;  i< nomes.length; i++) {
     
-    console.log(`${nomes[i]} - ${enderecos[i]}`);
+    console.log(`${nomes[i]} - ${enderecos[i]} - R$${valoresKm[i]}`);
     
 }
+
