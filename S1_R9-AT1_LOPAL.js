@@ -23,7 +23,7 @@ fs.writeFileSync(nomeArquivo, conteudo, "utf8");
 
 do {
     
-    //repetir até conseguir o valor da variável nome correto
+    //repetir até conseguir o valor da variável NOME correto
     do {
         nome = promptSync(`Insira seu nome:`);
     
@@ -38,7 +38,7 @@ do {
         
     } while (nome = !(isNaN(nome)));
 
-     //repetir até conseguir o valor da variável endereço correto
+     //repetir até conseguir o valor da variável ENDEREÇO correto
      do {
         endereco = promptSync(`Insira seu endereço:`);
     
@@ -52,8 +52,23 @@ do {
         }
         
     } while (endereco == '');
+
+    //repetir até conseguir o valor da variável DISTÂNCIA correto
+    do {
+        distancia = promptSync(`Insira a distância:`);
     
-    //repetir até conseguir o valor da variável valorKm correto
+        //verificação da variável distâncias
+        if (isNaN(distancia)) {
+            console.log(`ERRO`);
+    
+        } else {
+            distancias[i] = distancia;
+            conteudo += +distancia[i]+" - ";
+        }
+        
+    } while (isNaN(distancia));
+    
+    //repetir até conseguir o valor da variável VALOR POR KM correto
     do {
         valorKm = promptSync(`Insira o valor da entrega em reais:`);
         
@@ -63,7 +78,7 @@ do {
         
         } else {
             valoresKm[i] = valorKm;
-            conteudo += "R$"+valorKm[i]+" - ";
+            conteudo += valorKm[i]+" - ";
         }
             
     } while (isNaN(valorKm));
