@@ -37,7 +37,20 @@ do {
         
     } while (nome = !(isNaN(nome)));
 
-
+     //repetir até conseguir o valor da variável endereço correto
+     do {
+        endereco = promptSync(`Insira seu endereço:`);
+    
+        //verificação da variável endereço
+        if (endereco == '') {
+            console.log(`ERRO`);
+    
+        } else {
+            enderecos[i] = endereco;
+            conteudo += enderecos[i]+" - ";
+        }
+        
+    } while (endereco == '');
 
     parar = promptSync(`Caso deseje continuar digite "sim" ou "s"!`);
     i++;
@@ -46,6 +59,6 @@ do {
 
 for (let  i= 0;  i< nomes.length; i++) {
     
-    console.log(`${nomes[i]}`);
+    console.log(`${nomes[i]} - ${enderecos[i]}`);
     
 }
