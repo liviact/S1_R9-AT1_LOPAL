@@ -11,7 +11,7 @@ let nome = 0;
 let endereco = 0;
 let distancia = 0;
 let entrega = 0;
-let urgente = 0;
+let urgente = 'não';
 let valorFinal = 0;
 let valorKm = 0;
 
@@ -86,6 +86,19 @@ do {
     i++;
     
 } while (parar == "sim" || parar == "s");
+
+entrega = valorKm*distancia;
+
+do {
+    let tipoEntrega= promptSync('Entrega urgente? Confirme com "s": ');
+    
+        if (tipoEntrega == 's') {
+            entrega = entrega*1.2;
+            urgente = 'sim';
+        } 
+    
+} while (condition);
+
 
 for (let  i= 0;  i< nomes.length; i++) {
     
