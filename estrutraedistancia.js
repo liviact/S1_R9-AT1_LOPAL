@@ -6,7 +6,6 @@ let nomeArquivo = "Dados.txt";
 let nomes = [];
 let enderecos = [];
 let distancias = [];
-let valoresKm = [];
 
 let nome = 0;
 let endereco = 0;
@@ -14,7 +13,7 @@ let distancia = 0;
 let entrega = 0;
 let urgente = 0;
 let valorFinal = 0;
-let valorKm = 0;
+const valor = 2;
 
 let i = 0;
 let parar = 0;
@@ -25,41 +24,28 @@ do {
     
     //repetir até conseguir o valor da variável nome correto
     do {
-        nome = promptSync(`Insira seu nome:`);
+        distancia = promptSync(`Insira a distância:`);
     
         //verificação da variável nome
-        if (!(isNaN(nome))) {
+        if (isNaN(distancia)) {
             console.log(`ERRO`);
     
         } else {
-            nomes[i] = nome;
-            conteudo += "\n"+nomes[i]+" - ";
+            distancias[i] = distancia;
+            conteudo += +distancia[i]+" - ";
         }
         
-    } while (nome = !(isNaN(nome)));
+    } while (isNaN(distancia));
 
-     //repetir até conseguir o valor da variável endereço correto
-     do {
-        endereco = promptSync(`Insira seu endereço:`);
-    
-        //verificação da variável endereço
-        if (endereco == '') {
-            console.log(`ERRO`);
-    
-        } else {
-            enderecos[i] = endereco;
-            conteudo += enderecos[i]+" - ";
-        }
-        
-    } while (endereco == '');
+
 
     parar = promptSync(`Caso deseje continuar digite "sim" ou "s"!`);
     i++;
 
 } while (parar == "sim" || parar == "s");
 
-for (let  i= 0;  i< nomes.length; i++) {
+for (let  i= 0;  i< distancias.length; i++) {
     
-    console.log(`${nomes[i]} - ${enderecos[i]}`);
+    console.log(`${distancias[i]}`);
     
 }
