@@ -90,7 +90,7 @@ do {
 
 for (let  i= 0;  i< nomes.length; i++) {
     
-    console.log(`${nomes[i]} - ${enderecos[i]} - R$${valoresKm[i]}`);
+    console.log(`${nomes[i]} - ${enderecos[i]} - ${distancias[i]} - R$${valoresKm[i]}`);
     
 }
 
