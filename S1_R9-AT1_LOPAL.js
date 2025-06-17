@@ -14,6 +14,10 @@ let urgente = 0;
 let valorFinal = 0;
 const valor = 2;
 
+let i = 0;
+let parar = 0;
+
+
 do {
     
-} while (condition);
+} while (parar == "sim");
